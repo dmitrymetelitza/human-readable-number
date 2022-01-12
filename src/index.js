@@ -1,5 +1,6 @@
 module.exports = function toReadable (number) {
-    let a = number.toString() 
+    let a = number.toString() // перевод в строку для подсчета количества цифр
+    let one = a[0]
     let two = a[1]
     let three = a[2]
     let four = a[3]
@@ -42,9 +43,12 @@ let BigNumber = [
          if ( number === 0){
         return "zero"
         }        
-        if (number > 0 && number < 20 ) {
-            return SmallNumber[number]; 
-        }  
+          if (number > 0 && number < 10 ) {
+          return SmallNumber[one]; 
+         }
+          if (9 < number && number < 20 ) {
+          return SmallNumber[one+two]
+         }
         if (19 < number && number < 100 && number % 10 == 0 ) {
          return BigNumber[one] 
         }
